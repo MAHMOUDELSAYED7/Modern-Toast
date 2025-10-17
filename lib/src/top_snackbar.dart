@@ -94,14 +94,16 @@ class _TopSnackBarState extends State<TopSnackBar>
       );
       textPainterIntrinsic.layout();
       final intrinsicTextWidth = textPainterIntrinsic.width;
-      final intrinsicContainerWidth =
-          intrinsicTextWidth + horizontalPadding + (widget.showIcon ? iconWidth + spacing : 0);
+      final intrinsicContainerWidth = intrinsicTextWidth +
+          horizontalPadding +
+          (widget.showIcon ? iconWidth + spacing : 0);
 
       if (intrinsicContainerWidth <= availableContainerWidth) {
         containerWidth = intrinsicContainerWidth;
       } else {
-        final availableTextWidth =
-            availableContainerWidth - horizontalPadding - (widget.showIcon ? iconWidth + spacing : 0);
+        final availableTextWidth = availableContainerWidth -
+            horizontalPadding -
+            (widget.showIcon ? iconWidth + spacing : 0);
         final textPainterWrapped = TextPainter(
           text: TextSpan(text: widget.message, style: effectiveTextStyle),
           maxLines: 3,

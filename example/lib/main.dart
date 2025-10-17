@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 40),
-              
+
               // Predefined Toast Types
               const Align(
                 alignment: Alignment.centerLeft,
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 15),
-              
+
               _buildToastButton(
                 icon: Icons.check_circle,
                 label: 'Show Success Toast',
@@ -196,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showSuccessToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.error,
                 label: 'Show Error Toast',
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showErrorToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.warning,
                 label: 'Show Warning Toast',
@@ -212,18 +212,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showWarningToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.info,
                 label: 'Show Info Toast',
                 color: ModernToastColors.info,
                 onPressed: _showInfoToast,
               ),
-              
+
               const SizedBox(height: 30),
               const Divider(),
               const SizedBox(height: 20),
-              
+
               // Custom Toast Examples
               const Align(
                 alignment: Alignment.centerLeft,
@@ -236,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 15),
-              
+
               _buildToastButton(
                 icon: Icons.star,
                 label: 'Show Custom Toast (Purple)',
@@ -244,18 +244,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showCustomToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.favorite,
                 label: 'Show Custom Toast (Pink)',
                 color: Colors.pink,
                 onPressed: _showCustomToast2,
               ),
-              
+
               const SizedBox(height: 30),
               const Divider(),
               const SizedBox(height: 20),
-              
+
               // New Features Examples
               const Align(
                 alignment: Alignment.centerLeft,
@@ -268,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 15),
-              
+
               _buildToastButton(
                 icon: Icons.text_format,
                 label: 'Custom Text Style',
@@ -276,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showCustomTextStyleToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.visibility_off,
                 label: 'No Icon Toast',
@@ -284,14 +284,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showNoIconToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.hide_image,
                 label: 'Custom Toast (No Icon)',
                 color: Colors.deepPurple,
                 onPressed: _showCustomToastNoIcon,
               ),
-              
+
               _buildToastButton(
                 icon: Icons.timer,
                 label: 'Long Duration Toast (5s)',
@@ -299,14 +299,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _showLongDurationToast,
               ),
               const SizedBox(height: 12),
-              
+
               _buildToastButton(
                 icon: Icons.text_fields,
                 label: 'Long Message Toast',
                 color: Colors.indigo,
                 onPressed: _showLongMessageToast,
               ),
-              
+
               const SizedBox(height: 40),
             ],
           ),

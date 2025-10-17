@@ -1,9 +1,9 @@
 name: modern_toast
 description: A beautiful, modern, and customizable toast notification package for Flutter with smooth animations and multiple toast types.
 version: 0.0.2
-homepage: https://github.com/yourusername/modern_toast
-repository: https://github.com/yourusername/modern_toast
-issue_tracker: https://github.com/yourusername/modern_toast/issues
+homepage: https://github.com/MAHMOUDELSAYED7/Modern-Toast
+repository: https://github.com/MAHMOUDELSAYED7/Modern-Toast
+issue_tracker: https://github.com/MAHMOUDELSAYED7/Modern-Toast/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
