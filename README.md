@@ -2,9 +2,6 @@
 
 A beautiful, modern, and highly customizable toast notification package for Flutter with smooth animations, multiple toast types, and advanced customization options.
 
-https://github.com/user-attachments/assets/7de0525a-c655-4fcd-8745-21d941465fb1
-
-
 ## ✨ Features
 
 - 🎨 **4 Pre-defined Toast Types**: Success, Error, Warning, and Info with beautiful colors
