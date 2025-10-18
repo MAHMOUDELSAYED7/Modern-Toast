@@ -1,7 +1,7 @@
 ## [0.0.2] - 2025-10-18
 
 ### Added
-- `textStyle` parameter to both `showModernToast` and `showCustomToast` for custom text styling
+- `textStyle` parameter to `showModernToast` for custom text styling
 - `showIcon` boolean parameter to hide/show icons (default: true)
 - Refactored code into smaller files following single responsibility principle:
   - `modern_toast_types.dart` - Contains enums and color constants
@@ -33,6 +33,6 @@
 
 ### Features
 - `showModernToast()` - Display predefined toast types
-- `showCustomToast()` - Display custom styled toasts
+- `showModernToast()` - Display toasts with predefined types or custom styling
 - `ModernToastType` enum - Success, Error, Warning, Info
 - `ModernToastColors` class - Default color palette

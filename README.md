@@ -49,13 +49,16 @@ showModernToast(
   type: ModernToastType.success,
 );
 
-// Display custom toast
-showCustomToast(
+// Display custom toast (when type is null, use color and icon)
+showModernToast(
   context,
   message: 'Custom styled toast!',
   color: Colors.purple,
   icon: Icons.star,
 );
+```
+
+````
 ```
 
 ### 📐 Custom Sizing & Styling
@@ -87,7 +90,7 @@ showModernToast(
 
 ```dart
 // Fully customized toast
-showCustomToast(
+showModernToast(
   context,
   message: 'Beautiful custom toast',
   color: Colors.purple,
@@ -101,7 +104,7 @@ showCustomToast(
 )
 
 // Custom toast without icon
-showCustomToast(
+showModernToast(
   context,
   message: 'No icon toast',
   color: Colors.orange,
@@ -203,7 +206,7 @@ class ToastDemoPage extends StatelessWidget {
 
             // Custom toasts
             ElevatedButton(
-              onPressed: () => showCustomToast(
+              onPressed: () => showModernToast(
                 context,
                 message: 'Custom purple toast! ⭐',
                 color: Colors.purple,
@@ -305,36 +308,14 @@ void showModernToast(
 **Parameters:**
 - `context` *(required)*: BuildContext - The current widget context
 - `message` *(required)*: String - The message to display
-- `type` *(required)*: ModernToastType - The toast type (success, error, warning, info)
+- `type`: ModernToastType? - The toast type (success, error, warning, info). If null, custom color/icon must be provided
+- `color`: Color? - Custom background color (used when type is null)
+- `icon`: IconData? - Custom icon to display (used when type is null)
 - `durationInMilliseconds`: int? - Display duration in milliseconds (default: 3000)
 - `textStyle`: TextStyle? - Custom text styling
 - `showIcon`: bool - Whether to show the icon (default: true)
 - `actionLabel`: String? - Action button label (not yet implemented)
 - `onActionPressed`: VoidCallback? - Action button callback (not yet implemented)
-
-### showCustomToast
-
-Displays a fully customizable toast notification.
-
-```dart
-void showCustomToast(
-  BuildContext context, {
-  String? message,
-  Color? color,
-  IconData? icon,
-  int? durationInMilliseconds,
-  TextStyle? textStyle,
-  bool showIcon = true,
-})
-```
-
-**Parameters:**
-- `context` *(required)*: BuildContext - The current widget context
-- `message`: String? - The message to display (default: 'There was an error, please try again later!')
-- `color`: Color? - Background color (default: ModernToastColors.info)
-- `icon`: IconData? - Icon to display (default: Icons.error_outline)
-- `durationInMilliseconds`: int? - Display duration in milliseconds (default: 3000)
-- `textStyle`: TextStyle? - Custom text styling
 - `showIcon`: bool - Whether to show the icon (default: true)
 
 ### ModernToastType Enum

@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _showCustomToast() {
-    showCustomToast(
+    showModernToast(
       context,
       message: 'Custom purple toast with star icon! ⭐',
       color: Colors.purple,
@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _showCustomToast2() {
-    showCustomToast(
+    showModernToast(
       context,
       message: 'Custom pink toast with favorite icon! 💖',
       color: Colors.pink,
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _showCustomToastNoIcon() {
-    showCustomToast(
+    showModernToast(
       context,
       message: 'Custom toast without icon',
       color: Colors.orange,

@@ -181,8 +181,8 @@ void main() {
     });
   });
 
-  group('ShowCustomToast Function', () {
-    testWidgets('showCustomToast can be called without errors',
+  group('ShowModernToast Custom Styling', () {
+    testWidgets('showModernToast with custom color and icon can be called',
         (WidgetTester tester) async {
       BuildContext? capturedContext;
 
@@ -202,7 +202,7 @@ void main() {
       );
 
       expect(
-        () => showCustomToast(
+        () => showModernToast(
           capturedContext!,
           message: 'Custom Toast',
           color: Colors.purple,
@@ -214,34 +214,7 @@ void main() {
       await tester.pump();
     });
 
-    testWidgets('showCustomToast with default parameters can be called',
-        (WidgetTester tester) async {
-      BuildContext? capturedContext;
-
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (context) {
-              capturedContext = context;
-              return const Scaffold(
-                body: Center(
-                  child: Text('Test'),
-                ),
-              );
-            },
-          ),
-        ),
-      );
-
-      expect(
-        () => showCustomToast(capturedContext!),
-        returnsNormally,
-      );
-
-      await tester.pump();
-    });
-
-    testWidgets('showCustomToast with custom textStyle can be called',
+    testWidgets('showModernToast with custom textStyle can be called',
         (WidgetTester tester) async {
       BuildContext? capturedContext;
 
@@ -267,7 +240,7 @@ void main() {
       );
 
       expect(
-        () => showCustomToast(
+        () => showModernToast(
           capturedContext!,
           message: 'Styled Toast',
           color: Colors.teal,
@@ -280,7 +253,7 @@ void main() {
       await tester.pump();
     });
 
-    testWidgets('showCustomToast with showIcon false can be called',
+    testWidgets('showModernToast with custom styling and showIcon false can be called',
         (WidgetTester tester) async {
       BuildContext? capturedContext;
 
@@ -300,9 +273,11 @@ void main() {
       );
 
       expect(
-        () => showCustomToast(
+        () => showModernToast(
           capturedContext!,
           message: 'No Icon',
+          color: Colors.orange,
+          icon: Icons.warning,
           showIcon: false,
         ),
         returnsNormally,
@@ -311,7 +286,7 @@ void main() {
       await tester.pump();
     });
 
-    testWidgets('showCustomToast with custom duration can be called',
+    testWidgets('showModernToast with custom duration can be called',
         (WidgetTester tester) async {
       BuildContext? capturedContext;
 
@@ -331,9 +306,11 @@ void main() {
       );
 
       expect(
-        () => showCustomToast(
+        () => showModernToast(
           capturedContext!,
           message: 'Long Duration Toast',
+          color: Colors.blue,
+          icon: Icons.timer,
           durationInMilliseconds: 5000,
         ),
         returnsNormally,
