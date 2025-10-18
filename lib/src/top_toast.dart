@@ -146,7 +146,8 @@ class _TopToastState extends State<TopToast>
                       width: containerWidth,
                       decoration: BoxDecoration(
                         color: widget.color.withValues(alpha: 0.95),
-                        borderRadius: BorderRadius.circular(widget.borderRadius),
+                        borderRadius:
+                            BorderRadius.circular(widget.borderRadius),
                         boxShadow: [
                           BoxShadow(
                             color: widget.color.withValues(alpha: 0.5),
