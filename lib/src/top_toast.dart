@@ -5,13 +5,28 @@ import 'modern_toast_types.dart';
 
 /// Internal widget that displays the actual toast notification
 class TopToast extends StatefulWidget {
+  /// The message to display in the toast
   final String message;
+
+  /// The background color of the toast
   final Color color;
+
+  /// The icon to display in the toast
   final IconData icon;
+
+  /// Duration in milliseconds before the toast auto-dismisses
   final int durationInMilliseconds;
+
+  /// Custom text style for the toast message
   final TextStyle? textStyle;
+
+  /// Whether to show the icon in the toast
   final bool showIcon;
+
+  /// Border radius for the toast container corners
   final double borderRadius;
+
+  /// Callback function called when the toast should be removed
   final VoidCallback onRemove;
 
   const TopToast({
@@ -32,18 +47,23 @@ class TopToast extends StatefulWidget {
 
 class _TopToastState extends State<TopToast>
     with SingleTickerProviderStateMixin {
+  /// Animation controller for the slide-in/slide-out animation
   late AnimationController _controller;
+
+  /// Animation for the vertical slide transition
   late Animation<Offset> _animation;
 
   @override
   void initState() {
     super.initState();
 
+    // Initialize animation controller with 300ms duration
     _controller = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
     )..forward();
 
+    // Create slide animation from top (offset -1) to center (offset 0)
     _animation = Tween<Offset>(
       begin: const Offset(0, -1),
       end: Offset.zero,
@@ -69,19 +89,24 @@ class _TopToastState extends State<TopToast>
 
   @override
   Widget build(BuildContext context) {
+    // Get default text style from theme, with white color and medium weight
     final defaultTextStyle = Theme.of(context).textTheme.bodySmall?.copyWith(
           fontWeight: FontWeight.w500,
           color: Colors.white,
         );
 
+    // Use custom text style if provided, otherwise use default
     final textStyle = widget.textStyle ?? defaultTextStyle;
 
-    const horizontalPadding = 32.0 * 2;
+    // Constants for layout calculations
+    const horizontalPadding = 32.0 * 2; // 64.0 total horizontal padding
     const iconWidth = 24.0;
     const spacing = 8.0;
+
+    // Get screen dimensions for responsive sizing
     final mediaQuery = MediaQuery.of(context);
     final screenWidth = mediaQuery.size.width;
-    final availableContainerWidth = screenWidth * 0.8;
+    final availableContainerWidth = screenWidth * 0.8; // 80% of screen width
 
     double containerWidth = availableContainerWidth;
 
@@ -89,6 +114,7 @@ class _TopToastState extends State<TopToast>
     if (textStyle != null) {
       final effectiveTextStyle = textStyle;
 
+      // Measure intrinsic text width
       final textPainterIntrinsic = TextPainter(
         text: TextSpan(text: widget.message, style: effectiveTextStyle),
         maxLines: 1,
@@ -96,6 +122,8 @@ class _TopToastState extends State<TopToast>
       );
       textPainterIntrinsic.layout();
       final intrinsicTextWidth = textPainterIntrinsic.width;
+
+      // Calculate total width needed including padding and icon
       final intrinsicContainerWidth = intrinsicTextWidth +
           horizontalPadding +
           (widget.showIcon ? iconWidth + spacing : 0);
@@ -103,28 +131,36 @@ class _TopToastState extends State<TopToast>
       if (intrinsicContainerWidth <= availableContainerWidth) {
         containerWidth = intrinsicContainerWidth;
       } else {
+        // Calculate available width for text when container is at max width
         final availableTextWidth = availableContainerWidth -
             horizontalPadding -
             (widget.showIcon ? iconWidth + spacing : 0);
+
+        // Check if text fits in available space with wrapping
         final textPainterWrapped = TextPainter(
           text: TextSpan(text: widget.message, style: effectiveTextStyle),
           maxLines: 3,
           textDirection: TextDirection.ltr,
         );
         textPainterWrapped.layout(maxWidth: availableTextWidth);
+
         if (textPainterWrapped.didExceedMaxLines) {
+          // Text doesn't fit, expand container width
           containerWidth = (intrinsicTextWidth + horizontalPadding).clamp(
             availableContainerWidth,
-            screenWidth * 0.9,
+            screenWidth * 0.9, // Max 90% of screen width
           );
         } else {
+          // Text fits, use standard container width
           containerWidth = availableContainerWidth;
         }
       }
 
+      // Ensure container width stays within reasonable bounds
       containerWidth = containerWidth.clamp(0, screenWidth * 0.9);
     }
 
+    // Build the toast widget with animations and styling
     return Positioned(
       top: 0,
       left: 0,
