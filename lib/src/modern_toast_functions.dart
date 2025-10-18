@@ -16,6 +16,7 @@ DateTime? _lastSnackBarTime;
 /// [durationInMilliseconds] - Duration for which toast should be visible (default: 3000ms)
 /// [textStyle] - Custom text style for the toast message
 /// [showIcon] - Whether to show the icon (default: true)
+/// [borderRadius] - Border radius for the toast container (default: 25.0)
 /// [actionLabel] - Optional action button label (not yet implemented)
 /// [onActionPressed] - Optional action button callback (not yet implemented)
 void showModernToast(
@@ -27,6 +28,7 @@ void showModernToast(
   int? durationInMilliseconds,
   TextStyle? textStyle,
   bool showIcon = true,
+  double borderRadius = 25.0,
   String? actionLabel,
   VoidCallback? onActionPressed,
 }) {
@@ -79,6 +81,7 @@ void showModernToast(
       durationInMilliseconds: durationInMilliseconds ?? 3000,
       textStyle: textStyle,
       showIcon: showIcon,
+      borderRadius: borderRadius,
       onRemove: () => overlayEntry.remove(),
     ),
   );

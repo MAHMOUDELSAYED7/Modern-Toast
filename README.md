@@ -112,6 +112,14 @@ showModernToast(
     color: Colors.white,
   ),
 )
+
+// Custom border radius
+showModernToast(
+  context,
+  message: 'Rounded corners toast',
+  type: ModernToastType.success,
+  borderRadius: 8.0,
+)
 ```
 
 ### 📏 Duration Control
@@ -299,6 +307,7 @@ void showModernToast(
   int? durationInMilliseconds,
   TextStyle? textStyle,
   bool showIcon = true,
+  double borderRadius = 25.0,
   String? actionLabel,
   VoidCallback? onActionPressed,
 })
@@ -313,6 +322,7 @@ void showModernToast(
 - `durationInMilliseconds`: int? - Display duration in milliseconds (default: 3000)
 - `textStyle`: TextStyle? - Custom text styling
 - `showIcon`: bool - Whether to show the icon (default: true)
+- `borderRadius`: double - Border radius for the toast container (default: 25.0)
 - `actionLabel`: String? - Action button label (not yet implemented)
 - `onActionPressed`: VoidCallback? - Action button callback (not yet implemented)
 

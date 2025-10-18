@@ -138,6 +138,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _showCustomBorderRadiusToast() {
+    showModernToast(
+      context,
+      message: 'Custom border radius toast',
+      type: ModernToastType.success,
+      borderRadius: 8.0,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -291,6 +300,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.deepPurple,
                 onPressed: _showCustomToastNoIcon,
               ),
+              const SizedBox(height: 12),
+
+              _buildToastButton(
+                icon: Icons.rounded_corner,
+                label: 'Custom Border Radius',
+                color: Colors.pink,
+                onPressed: _showCustomBorderRadiusToast,
+              ),
+              const SizedBox(height: 12),
 
               _buildToastButton(
                 icon: Icons.timer,

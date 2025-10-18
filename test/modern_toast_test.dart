@@ -179,6 +179,39 @@ void main() {
 
       await tester.pump();
     });
+
+    testWidgets('showModernToast with custom borderRadius can be called',
+        (WidgetTester tester) async {
+      BuildContext? capturedContext;
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Builder(
+            builder: (context) {
+              capturedContext = context;
+              return const Scaffold(
+                body: Center(
+                  child: Text('Test'),
+                ),
+              );
+            },
+          ),
+        ),
+      );
+
+      // Verify we can call the function with custom borderRadius
+      expect(
+        () => showModernToast(
+          capturedContext!,
+          message: 'Custom Border Radius Toast',
+          type: ModernToastType.success,
+          borderRadius: 10.0,
+        ),
+        returnsNormally,
+      );
+
+      await tester.pump();
+    });
   });
 
   group('ShowModernToast Custom Styling', () {

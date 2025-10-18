@@ -11,6 +11,7 @@ class TopToast extends StatefulWidget {
   final int durationInMilliseconds;
   final TextStyle? textStyle;
   final bool showIcon;
+  final double borderRadius;
   final VoidCallback onRemove;
 
   const TopToast({
@@ -21,6 +22,7 @@ class TopToast extends StatefulWidget {
     required this.durationInMilliseconds,
     this.textStyle,
     this.showIcon = true,
+    this.borderRadius = 25.0,
     required this.onRemove,
   });
 
@@ -144,7 +146,7 @@ class _TopToastState extends State<TopToast>
                       width: containerWidth,
                       decoration: BoxDecoration(
                         color: widget.color.withValues(alpha: 0.95),
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(widget.borderRadius),
                         boxShadow: [
                           BoxShadow(
                             color: widget.color.withValues(alpha: 0.5),
