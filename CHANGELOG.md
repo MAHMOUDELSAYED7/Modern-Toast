@@ -1,3 +1,8 @@
+## [0.0.5] - 2025-10-18
+
+### Fixed
+- Minor comment formatting fixes in library documentation
+
 ## [0.0.4] - 2025-10-18
 
 ### Added
