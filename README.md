@@ -2,9 +2,9 @@
 
 A beautiful, modern, and highly customizable toast notification package for Flutter with smooth animations, multiple toast types, and advanced customization options.
 
-
-https://github.com/user-attachments/assets/70ed0d6c-0ceb-4287-be8c-d592e4f5edbd
-
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/70ed0d6c-0ceb-4287-be8c-d592e4f5edbd" controls autoplay muted loop></video>
+</p>
 
 ## ✨ Features
 
