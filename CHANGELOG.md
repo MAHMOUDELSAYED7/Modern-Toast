@@ -1,3 +1,12 @@
+## [0.0.3] - 2025-10-18
+
+### Added
+- `borderRadius` parameter to `showModernToast` for customizing toast corner radius (default: 25.0)
+- Example demonstrating custom border radius in the example app
+
+### Changed
+- Updated API documentation to include the new `borderRadius` parameter
+
 ## [0.0.2] - 2025-10-18
 
 ### Added
