@@ -6,7 +6,7 @@
 - Refactored code into smaller files following single responsibility principle:
   - `modern_toast_types.dart` - Contains enums and color constants
   - `modern_toast_functions.dart` - Contains the main toast functions
-  - `top_snackbar.dart` - Contains the TopSnackBar widget
+  - `top_toast.dart` - Contains the TopToast widget
 
 ### Removed
 - `flutter_screenutil` dependency - package now works without additional setup

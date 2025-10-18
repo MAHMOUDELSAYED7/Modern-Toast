@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'modern_toast_types.dart';
 
 /// Internal widget that displays the actual toast notification
-class TopSnackBar extends StatefulWidget {
+class TopToast extends StatefulWidget {
   final String message;
   final Color color;
   final IconData icon;
@@ -13,7 +13,7 @@ class TopSnackBar extends StatefulWidget {
   final bool showIcon;
   final VoidCallback onRemove;
 
-  const TopSnackBar({
+  const TopToast({
     super.key,
     required this.message,
     required this.color,
@@ -25,10 +25,10 @@ class TopSnackBar extends StatefulWidget {
   });
 
   @override
-  State<TopSnackBar> createState() => _TopSnackBarState();
+  State<TopToast> createState() => _TopToastState();
 }
 
-class _TopSnackBarState extends State<TopSnackBar>
+class _TopToastState extends State<TopToast>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _animation;

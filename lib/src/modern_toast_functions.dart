@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'modern_toast_types.dart';
-import 'top_snackbar.dart';
+import 'top_toast.dart';
 
 /// Track the last snackbar time to prevent showing multiple toasts at once
 DateTime? _lastSnackBarTime;
@@ -61,7 +61,7 @@ void showModernToast(
   final overlay = Overlay.of(context);
   late final OverlayEntry overlayEntry;
   overlayEntry = OverlayEntry(
-    builder: (context) => TopSnackBar(
+    builder: (context) => TopToast(
       message: message,
       color: backgroundColor,
       icon: icon,
@@ -106,7 +106,7 @@ void showCustomToast(
   final overlay = Overlay.of(context);
   late final OverlayEntry overlayEntry;
   overlayEntry = OverlayEntry(
-    builder: (context) => TopSnackBar(
+    builder: (context) => TopToast(
       message: message ?? 'There was an error, please try again later!',
       color: color ?? ModernToastColors.info,
       icon: icon ?? Icons.error_outline,

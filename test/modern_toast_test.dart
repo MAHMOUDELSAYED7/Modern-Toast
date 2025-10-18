@@ -22,9 +22,9 @@ void main() {
 
   group('ModernToast Colors', () {
     test('ModernToastColors should have correct color values', () {
-      expect(ModernToastColors.success, const Color(0xFF4CAF50));
-      expect(ModernToastColors.error, const Color(0xFFF44336));
-      expect(ModernToastColors.warning, const Color(0xFFFF9800));
+      expect(ModernToastColors.success, const Color(0xFF34A853));
+      expect(ModernToastColors.error, const Color(0xFFFF0000));
+      expect(ModernToastColors.warning, const Color(0xFFFFA000));
       expect(ModernToastColors.info, const Color(0xFF2196F3));
     });
 
@@ -37,10 +37,10 @@ void main() {
     });
 
     test('ModernToastColors should have correct opacity', () {
-      expect(ModernToastColors.success.opacity, 1.0);
-      expect(ModernToastColors.error.opacity, 1.0);
-      expect(ModernToastColors.warning.opacity, 1.0);
-      expect(ModernToastColors.info.opacity, 1.0);
+      expect(ModernToastColors.success.a, 1.0);
+      expect(ModernToastColors.error.a, 1.0);
+      expect(ModernToastColors.warning.a, 1.0);
+      expect(ModernToastColors.info.a, 1.0);
     });
   });
 
