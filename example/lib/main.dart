@@ -147,6 +147,24 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _showSharpBorderRadiusToast() {
+    showModernToast(
+      context,
+      message: 'Sharp corners toast',
+      type: ModernToastType.warning,
+      borderRadius: 0.0,
+    );
+  }
+
+  void _showLargeBorderRadiusToast() {
+    showModernToast(
+      context,
+      message: 'Very rounded toast',
+      type: ModernToastType.info,
+      borderRadius: 50.0,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -300,13 +318,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.deepPurple,
                 onPressed: _showCustomToastNoIcon,
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 20),
+
+              // Border Radius Examples
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Border Radius Examples',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.blueGrey,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
 
               _buildToastButton(
                 icon: Icons.rounded_corner,
                 label: 'Custom Border Radius',
                 color: Colors.pink,
                 onPressed: _showCustomBorderRadiusToast,
+              ),
+              const SizedBox(height: 12),
+
+              _buildToastButton(
+                icon: Icons.crop_square,
+                label: 'Sharp Corners (0px)',
+                color: Colors.redAccent,
+                onPressed: _showSharpBorderRadiusToast,
+              ),
+              const SizedBox(height: 12),
+
+              _buildToastButton(
+                icon: Icons.circle,
+                label: 'Very Rounded (50px)',
+                color: Colors.lightBlue,
+                onPressed: _showLargeBorderRadiusToast,
               ),
               const SizedBox(height: 12),
 
