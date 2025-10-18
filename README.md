@@ -58,9 +58,6 @@ showModernToast(
 );
 ```
 
-````
-```
-
 ### 📐 Custom Sizing & Styling
 
 ```dart
@@ -296,7 +293,9 @@ Displays a toast notification with predefined styling.
 void showModernToast(
   BuildContext context, {
   required String message,
-  required ModernToastType type,
+  ModernToastType? type,
+  Color? color,
+  IconData? icon,
   int? durationInMilliseconds,
   TextStyle? textStyle,
   bool showIcon = true,
@@ -316,7 +315,6 @@ void showModernToast(
 - `showIcon`: bool - Whether to show the icon (default: true)
 - `actionLabel`: String? - Action button label (not yet implemented)
 - `onActionPressed`: VoidCallback? - Action button callback (not yet implemented)
-- `showIcon`: bool - Whether to show the icon (default: true)
 
 ### ModernToastType Enum
 

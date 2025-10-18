@@ -253,7 +253,8 @@ void main() {
       await tester.pump();
     });
 
-    testWidgets('showModernToast with custom styling and showIcon false can be called',
+    testWidgets(
+        'showModernToast with custom styling and showIcon false can be called',
         (WidgetTester tester) async {
       BuildContext? capturedContext;
 
