@@ -1,3 +1,18 @@
+## [0.0.4] - 2025-10-18
+
+### Added
+- Comprehensive API documentation for all public classes and methods
+- Library-level documentation with usage examples
+- Documentation for `ModernToastColors` class and all color constants
+
+### Changed
+- Updated `animate_do` dependency to version ^4.0.0 for latest features and bug fixes
+- Improved README with centered video demo
+
+### Fixed
+- Code formatting issues for better pub.dev score
+- Missing documentation comments for better API coverage
+
 ## [0.0.3] - 2025-10-18
 
 ### Added

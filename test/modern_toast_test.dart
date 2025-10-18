@@ -74,7 +74,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
 
     testWidgets('showModernToast with all types can be called',
@@ -106,7 +107,8 @@ void main() {
           ),
           returnsNormally,
         );
-        await tester.pump(const Duration(seconds: 2));
+        await tester.pump(); // Build the toast
+        await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
       }
     });
 
@@ -145,7 +147,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
 
     testWidgets('showModernToast with showIcon false can be called',
@@ -177,7 +180,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
 
     testWidgets('showModernToast with custom borderRadius can be called',
@@ -210,7 +214,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
   });
 
@@ -243,6 +248,9 @@ void main() {
         ),
         returnsNormally,
       );
+
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
 
       await tester.pump();
     });
@@ -283,7 +291,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
 
     testWidgets(
@@ -317,7 +326,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 4)); // Wait for auto-dismiss
     });
 
     testWidgets('showModernToast with custom duration can be called',
@@ -350,7 +360,8 @@ void main() {
         returnsNormally,
       );
 
-      await tester.pump();
+      await tester.pump(); // Build the toast
+      await tester.pump(const Duration(seconds: 6)); // Wait for longer auto-dismiss
     });
   });
 }
